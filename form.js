@@ -59,12 +59,12 @@ app.post("/register",async(req,res)=>
 });
 app.get("/complete",(req,res)=>
 {
-res.sendFile(__dirname+"./complete.html");
+res.sendFile(__dirname+"complete.html");
 });
 
 app.get("/error",(req,res)=>
 {
-res.sendFile(__dirname+"./error.html");
+res.sendFile(__dirname+"error.html");
 });
 
 app.listen(port,()=>
