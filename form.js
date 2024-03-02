@@ -30,7 +30,7 @@ app.get("/",(req,res)=>
  res.sendFile(__dirname + "index.html");
 });
 
-app.post("/register",async(req,res)=>
+app.post("/",async(req,res)=>
 {
  try{
     const {name,email,password}=req.body;
