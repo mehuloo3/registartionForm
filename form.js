@@ -13,7 +13,7 @@ const password=process.env.MONGODB_PASSWORD;
 mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.dzrr10u.mongodb.net/registrationSchemaDb`,{
 
 });
-app.use(express.static(__dirname + '/main'));
+app.use(express.static(__dirname + '/'));
 const registrationSchema=new mongoose.Schema({
     name:String,
     email:String,
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 app.get("/",(req,res)=>
 {
- res.sendFile(__dirname + "/main/index.html");
+ res.sendFile(__dirname + "index.html");
 });
 
 app.post("/register",async(req,res)=>
@@ -59,12 +59,12 @@ app.post("/register",async(req,res)=>
 });
 app.get("/complete",(req,res)=>
 {
-res.sendFile(__dirname+"/main/complete.html");
+res.sendFile(__dirname+"./complete.html");
 });
 
 app.get("/error",(req,res)=>
 {
-res.sendFile(__dirname+"/main/error.html");
+res.sendFile(__dirname+"./error.html");
 });
 
 app.listen(port,()=>
